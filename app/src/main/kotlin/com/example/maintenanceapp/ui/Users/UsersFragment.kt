@@ -12,18 +12,18 @@ import com.example.maintenanceapp.R
 
 class UsersFragment : Fragment() {
 
-    private lateinit var inventoryItemsViewModel: UsersViewModel
+    private lateinit var usersItemsViewModel: UsersViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        inventoryItemsViewModel =
+        usersItemsViewModel =
                 ViewModelProviders.of(this).get(UsersViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_inventory_items, container, false)
         val textView: TextView = root.findViewById(R.id.text_slideshow)
-        inventoryItemsViewModel.text.observe(viewLifecycleOwner, Observer {
+        usersItemsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

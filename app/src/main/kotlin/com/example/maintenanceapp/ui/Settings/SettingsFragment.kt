@@ -1,4 +1,4 @@
-package com.example.maintenanceapp.ui.PMCheckLists
+package com.example.maintenanceapp.ui.InventoryItems
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.maintenanceapp.R
 
-class PMCheckListsFragment : Fragment() {
+class SettingsFragment : Fragment() {
 
-    private lateinit var pmCheckListsViewModel: PMCheckListsModel
+    private lateinit var settingsItemsViewModel: SettingsViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        pmCheckListsViewModel =
-                ViewModelProviders.of(this).get(PMCheckListsModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_pm_check_lists, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
-        pmCheckListsViewModel.text.observe(viewLifecycleOwner, Observer {
+        settingsItemsViewModel =
+                ViewModelProviders.of(this).get(SettingsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_inventory_items, container, false)
+        val textView: TextView = root.findViewById(R.id.text_slideshow)
+        settingsItemsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

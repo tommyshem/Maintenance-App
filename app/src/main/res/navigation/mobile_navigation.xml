@@ -19,12 +19,17 @@
 
     <fragment
         android:id="@+id/nav_inventory_items"
-        android:name="com.example.maintenanceapp.ui.InventoryItems.UsersFragment"
+        android:name="com.example.maintenanceapp.ui.InventoryItems.InventoryItemsFragment"
         android:label="@string/menu_3"
         tools:layout="@layout/fragment_inventory_items" />
     <fragment
         android:id="@+id/nav_users"
         android:name="com.example.maintenanceapp.ui.InventoryItems.UsersFragment"
         android:label="@string/menu_4"
-        tools:layout="@layout/fragment_inventory_items" />
+        tools:layout="@layout/fragment_users" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.example.maintenanceapp.ui.InventoryItems.SettingsFragment"
+        android:label="@string/menu_5"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

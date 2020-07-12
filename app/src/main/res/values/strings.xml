@@ -14,4 +14,5 @@
     <string name="menu_2">PM Check Lists</string>
     <string name="menu_3">Inventory Items</string>
     <string name="menu_4">Users</string>
+    <string name="menu_5">Settings</string>
 </resources>
