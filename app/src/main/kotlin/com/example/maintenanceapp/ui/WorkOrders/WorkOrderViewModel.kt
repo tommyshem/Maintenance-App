@@ -1,13 +1,13 @@
-package com.example.maintenanceapp.ui.home
+package com.example.maintenanceapp.ui.WorkOrders
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class WorkOrderViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is Work Orders Fragment"
     }
     val text: LiveData<String> = _text
 }

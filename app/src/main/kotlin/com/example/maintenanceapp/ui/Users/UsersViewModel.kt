@@ -1,13 +1,13 @@
-package com.example.maintenanceapp.ui.PMCheckLists
+package com.example.maintenanceapp.ui.InventoryItems
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class PMCheckListsModel : ViewModel() {
+class UsersViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is PM Check Lists Fragment"
+        value = "This is Users Fragment"
     }
     val text: LiveData<String> = _text
 }

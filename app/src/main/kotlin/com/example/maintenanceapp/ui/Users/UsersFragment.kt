@@ -1,4 +1,4 @@
-package com.example.maintenanceapp.ui.WorkOrders
+package com.example.maintenanceapp.ui.InventoryItems
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.maintenanceapp.R
 
-class WorkOrderFragment : Fragment() {
+class UsersFragment : Fragment() {
 
-    private lateinit var workOrderViewModel: WorkOrderViewModel
+    private lateinit var inventoryItemsViewModel: UsersViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        workOrderViewModel =
-                ViewModelProviders.of(this).get(WorkOrderViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_work_orders, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        workOrderViewModel.text.observe(viewLifecycleOwner, Observer {
+        inventoryItemsViewModel =
+                ViewModelProviders.of(this).get(UsersViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_inventory_items, container, false)
+        val textView: TextView = root.findViewById(R.id.text_slideshow)
+        inventoryItemsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

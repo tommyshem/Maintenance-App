@@ -1,4 +1,4 @@
-package com.example.maintenanceapp.ui.gallery
+package com.example.maintenanceapp.ui.PMCheckLists
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.maintenanceapp.R
 
-class GalleryFragment : Fragment() {
+class PMCheckListsFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var PMCheckListsModel: PMCheckListsModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel::class.java)
+        PMCheckListsModel =
+                ViewModelProviders.of(this).get(PMCheckListsModel::class.java)
         val root = inflater.inflate(R.layout.fragment_pm_check_lists, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        PMCheckListsModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
