@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.example.maintenanceapp.R
+import com.example.maintenanceapp.databinding.FragmentWorkOrdersBinding
 
 class WorkOrderFragment : Fragment() {
 
@@ -19,13 +17,11 @@ class WorkOrderFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        workOrderViewModel =
-                ViewModelProviders.of(this).get(WorkOrderViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_work_orders, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-        workOrderViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        // A binding class is generated for each layout file.
+        // By default, the name of the class is based on the name of the layout file,
+        // converting it to Pascal case and adding the Binding suffix to it e.g fragment_work_orders becomes FragmentWorkOrdersBinding
+        val bind: FragmentWorkOrdersBinding = FragmentWorkOrdersBinding.bind(root)
         return root
     }
 }

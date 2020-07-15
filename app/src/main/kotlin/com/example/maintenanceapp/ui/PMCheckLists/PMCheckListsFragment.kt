@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import com.example.maintenanceapp.R
+import com.example.maintenanceapp.databinding.FragmentPmCheckListsBinding
 
 class PMCheckListsFragment : Fragment() {
 
@@ -19,13 +17,12 @@ class PMCheckListsFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        pmCheckListsViewModel =
-                ViewModelProviders.of(this).get(PMCheckListsModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_pm_check_lists, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
-        pmCheckListsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        // A binding class is generated for each layout file.
+        // By default, the name of the class is based on the name of the layout file,
+        // converting it to Pascal case and adding the Binding suffix to it e.g fragment_pm_check_lists becomes FragmentPmCheckListsBinding
+        val bind: FragmentPmCheckListsBinding = FragmentPmCheckListsBinding.bind(root)
         return root
     }
 }

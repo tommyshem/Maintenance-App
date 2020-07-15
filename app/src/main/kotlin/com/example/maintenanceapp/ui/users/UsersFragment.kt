@@ -1,4 +1,4 @@
-package com.example.maintenanceapp.ui.InventoryItems
+package com.example.maintenanceapp.ui.users
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.maintenanceapp.R
 import com.example.maintenanceapp.databinding.FragmentUsersBinding
+import com.example.maintenanceapp.ui.inventoryItems.UsersViewModel
 
 class UsersFragment : Fragment() {
 

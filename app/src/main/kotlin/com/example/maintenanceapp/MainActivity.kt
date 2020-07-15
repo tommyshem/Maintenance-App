@@ -13,16 +13,17 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.maintenanceapp.database.DatabaseHandler
+import com.example.maintenanceapp.data.DatabaseHandler
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+    private lateinit var dbHelper : DatabaseHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Init database
-        val dbHelper = DatabaseHandler(this)
+        dbHelper = DatabaseHandler(this)
         // ui stuff here
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -54,4 +55,11 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
+    override fun onDestroy() {
+        // close the database
+       // dbHelper.close()
+        super.onDestroy()
+    }
+
 }
