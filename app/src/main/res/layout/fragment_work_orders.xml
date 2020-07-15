@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.WorkOrders.WorkOrderFragment">
+    tools:context=".ui.workorders.WorkOrderFragment">
 
     <TextView
         android:id="@+id/text_home"

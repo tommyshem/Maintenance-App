@@ -1,4 +1,4 @@
-package com.example.maintenanceapp.ui.WorkOrders
+package com.example.maintenanceapp.ui.workorders
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -10,9 +10,12 @@
 
     <string name="action_settings">Settings</string>
 
+    <string name="engineer_name">Engineer Name</string>
+
     <string name="menu_1">Work Orders</string>
     <string name="menu_2">PM Check Lists</string>
     <string name="menu_3">Inventory Items</string>
     <string name="menu_4">Users</string>
     <string name="menu_5">Settings</string>
+    <string name="enter_engineers_name">Enter Engineers Name</string>
 </resources>

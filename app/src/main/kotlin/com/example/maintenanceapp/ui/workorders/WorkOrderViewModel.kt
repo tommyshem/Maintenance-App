@@ -1,4 +1,4 @@
-package com.example.maintenanceapp.ui.WorkOrders
+package com.example.maintenanceapp.ui.workorders
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
