@@ -8,8 +8,6 @@ import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.example.maintenanceapp.R
 import com.example.maintenanceapp.databinding.FragmentUsersBinding
-import com.example.maintenanceapp.ui.inventoryItems.UsersViewModel
-
 
 class UsersFragment : Fragment() {
 

@@ -32,4 +32,9 @@
         android:name="com.example.maintenanceapp.ui.inventoryItems.SettingsFragment"
         android:label="@string/menu_5"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/nav_user_add"
+        android:name="com.example.maintenanceapp.ui.u"
+        android:label="@string/menu_5"
+        tools:layout="@layout/fragment_users_add" />
 </navigation>

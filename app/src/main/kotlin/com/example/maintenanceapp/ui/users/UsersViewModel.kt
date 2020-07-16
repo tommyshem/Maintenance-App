@@ -1,4 +1,4 @@
-package com.example.maintenanceapp.ui.inventoryItems
+package com.example.maintenanceapp.ui.users
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
