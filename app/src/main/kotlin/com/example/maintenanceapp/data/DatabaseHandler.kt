@@ -1,19 +1,41 @@
 package com.example.maintenanceapp.data
 
 import android.content.Context
-import android.database.sqlite.SQLiteDatabase
-import android.database.sqlite.SQLiteOpenHelper
-import android.provider.BaseColumns
 import androidx.room.Database
+import androidx.room.Room
+import androidx.room.RoomDatabase
 
 @Database(
-entities = [Users_Table::class]
+// add table entity's you want in the database
+    entities = [UsersEntity::class], version = 1
 )
-class DatabaseHandler (context: Context) {
+abstract class AppDatabase : RoomDatabase() {
+    // Add here the table data access object
+    abstract fun getUsersDao(): UsersDao
 
     companion object {
-        // If you change the database schema, you must increment the database version.
-        private const val DATABASE_VERSION = 1
-        private const val DATABASE_NAME = "MaintenanceApp.db"
+        var INSTANCE: AppDatabase? = null
+
+        fun getAppDataBase(context: Context): AppDatabase? {
+            if (INSTANCE == null) {
+                synchronized(AppDatabase::class) {
+                    INSTANCE = Room.databaseBuilder(
+                        context.applicationContext,
+                        AppDatabase::class.java,
+                        "MaintenanceApp.db"
+                    ).build()
+                }
+            }
+            return INSTANCE
+        }
+
+        fun destroyDataBase() {
+            // close the database
+            if (INSTANCE?.isOpen == true) {
+                INSTANCE?.close()
+            }
+            // clear the reference
+            INSTANCE = null
+        }
     }
 }

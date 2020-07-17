@@ -13,17 +13,20 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.maintenanceapp.data.DatabaseHandler
+import com.example.maintenanceapp.data.AppDatabase
+
 
 class MainActivity : AppCompatActivity() {
-
+    // ********************Global variables  *************************************
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var dbHelper : DatabaseHandler
+    // database reference
+    private var db : AppDatabase? = null
 
+    // *********************Functions ********************************************
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // Init database
-        dbHelper = DatabaseHandler(this)
+        db = AppDatabase.getAppDataBase(this)
         // ui stuff here
         setContentView(R.layout.activity_main)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -58,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         // close the database
-       // dbHelper.close()
+        AppDatabase.destroyDataBase()
         super.onDestroy()
     }
 

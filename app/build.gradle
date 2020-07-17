@@ -1,6 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+// room database
+apply plugin: 'kotlin-kapt'
+// nav safeargs
+//apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 android {
     compileSdkVersion 30
@@ -32,6 +36,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildscript {
+        ext.room_version = '2.1.0-alpha01'
+    }
 }
 
 dependencies {
@@ -47,12 +54,15 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
     // room database
-    annotationProcessor 'androidx.room:room-compiler:2.2.5'
+    kapt "androidx.room:room-compiler:2.2.5"
+//    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+ //   annotationProcessor 'androidx.room:room-compiler:2.2.5'
+    implementation "androidx.room:room-ktx:2.2.5"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation 'androidx.room:room-runtime:2.2.5'
     // Testing
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     // Core test library
     androidTestImplementation 'androidx.test:core:1.2.0'
     // AndroidJUnitRunner and JUnit Rules
@@ -61,7 +71,7 @@ dependencies {
     // Assertions
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.ext:truth:1.2.0'
-    androidTestImplementation 'com.google.truth:truth:0.42'
+    androidTestImplementation 'com.google.truth:truth:1.0.1'
     // ui testing
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 

@@ -1,17 +1,18 @@
 package com.example.maintenanceapp.data
 
-import android.content.Context
-import org.junit.Before
-import org.junit.runner.RunWith
-import androidx.test.ext.junit.runners.AndroidJUnit4
+import org.hamcrest.CoreMatchers.equalTo
+import org.junit.Test
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import org.junit.Assert.assertThat
 
-@RunWith(AndroidJUnit4::class)
-class UsersTableTest {
-    private lateinit var usersDao: UsersDao
-    private lateinit var db :Users_Table
-    @Before
-    fun createDB(){
-        val context = ApplicationProvider.getApplicationContent<Context>()
+class DateTest() {
 
+    @Test
+    fun date() {
+        var currenttime = LocalDateTime.now()
+        var timeformat = DateTimeFormatter.ofPattern("yyyy-MM-dd") // HH:mm:ss.SSS")
+        var testtime = currenttime.format(timeformat).toString()
+        assertThat(testtime,equalTo("45"))
     }
 }

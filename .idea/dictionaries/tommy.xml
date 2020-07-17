@@ -2,6 +2,7 @@
   <dictionary name="tommy">
     <words>
       <w>maintenanceapp</w>
+      <w>sqlite</w>
     </words>
   </dictionary>
 </component>
