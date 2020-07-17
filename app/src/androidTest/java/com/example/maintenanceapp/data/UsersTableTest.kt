@@ -16,8 +16,9 @@ import com.example.maintenanceapp.data.*
 class UsersTableTest {
     private lateinit var usersDao: UsersDao
     private lateinit var database : AppDatabase
-    // TODO the table id is auto number so the insertUsers needs to be chabged from 2 args to one arg
-    private val user1 = UsersEntity(1,"John")
+    // TODO the table id is auto number so the insertUsers needs to be changed from 2 args to one arg
+    private val user1 = UsersEntity(1,"John","2020:07:16")
+    private val user2 = UsersEntity(2,"tommy Jim lad","2020:2:12")
     @Before
     fun createDb() {
         // set up device
@@ -29,6 +30,7 @@ class UsersTableTest {
         usersDao = database.getUsersDao()
         // insert test data
         usersDao.insertUsers(user1)
+        usersDao.insertUsers(user2)
     }
 
     @After
@@ -40,7 +42,7 @@ class UsersTableTest {
     @Test
     @Throws(java.lang.Exception::class)
     fun getalldata(){
-        assertThat(usersDao.getUsers(), equalTo(listOf(user1)))
+        assertThat(usersDao.getUsers(), equalTo(listOf(user1,user2)))
     }
 
     @Test

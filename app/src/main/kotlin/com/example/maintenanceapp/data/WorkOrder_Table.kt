@@ -5,6 +5,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+// Describe the sqlite users table
 @Entity(tableName = "work_order_table")
 data class WorkOrder_Table (
     @PrimaryKey(autoGenerate = true) val id: Int,
@@ -22,3 +23,5 @@ data class WorkOrder_Table (
     @ColumnInfo( name = "parts_used") val partsUsed : String?,
     @ColumnInfo( name = "parts_required") val partsRequired : String?
     )
+
+// Functions to interact with sqlite users table
