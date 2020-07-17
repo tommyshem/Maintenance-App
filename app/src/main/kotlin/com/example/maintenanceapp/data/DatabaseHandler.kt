@@ -4,7 +4,11 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.provider.BaseColumns
+import androidx.room.Database
 
+@Database(
+entities = [Users_Table::class]
+)
 class DatabaseHandler (context: Context) {
 
     companion object {

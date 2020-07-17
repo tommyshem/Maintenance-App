@@ -1,6 +1,7 @@
 package com.example.maintenanceapp.ui.users
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +19,7 @@ class UsersFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
+        Log.d("UserFragment","onCreateView called")
         val root = inflater.inflate(R.layout.fragment_users, container, false)
         // A binding class is generated for each layout file.
         // By default, the name of the class is based on the name of the layout file,
@@ -40,5 +41,10 @@ class UsersFragment : Fragment() {
         dropdown.adapter = adapter
 
         return root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d("UserFragment","onStart called")
     }
 }

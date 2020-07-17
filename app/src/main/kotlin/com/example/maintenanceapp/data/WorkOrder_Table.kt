@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "work_order_table")
 data class WorkOrder_Table (
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Int,
     @ColumnInfo( name = "work_order_number") @NonNull val workOrderNumber : Int,
     @ColumnInfo( name = "date") @NonNull val Date: String,
     @ColumnInfo( name = "summary_issue") @NonNull val summaryIssue: String,
