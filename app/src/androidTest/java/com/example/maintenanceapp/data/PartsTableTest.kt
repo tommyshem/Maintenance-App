@@ -20,14 +20,14 @@ class PartsTableTest {
     private val part2 = PartsEntity(2, "54-45", "bearing", 10F, "cutting table", 2, "45")
 
     @Before
-    fun createDb() {
+    fun createDatabase() {
         // set up device
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         // build database in memory
         database = Room.inMemoryDatabaseBuilder(
             context, AppDatabase::class.java
         ).build()
-        // get user table
+        // get part table
         partsDao = database.getPartsDao()
         // insert test data
         partsDao.insertPart(part1)
@@ -36,19 +36,19 @@ class PartsTableTest {
 
     @After
     @Throws(IOException::class)
-    fun closeDb() {
+    fun closeDatabase() {
         database.close()
     }
 
     @Test
     @Throws(java.lang.Exception::class)
-    fun getalldata() {
+    fun getAllParts() {
         assertThat(partsDao.getAllParts()).contains("54-45")
     }
 
     @Test
     @Throws(Exception::class)
-    fun readID() {
+    fun getPartNameFromManufactureID() {
         assertThat(partsDao.getPartNameFromManufactureID("54-45")).isEqualTo("bearing")
     }
 }

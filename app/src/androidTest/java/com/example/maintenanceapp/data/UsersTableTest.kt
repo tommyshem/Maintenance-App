@@ -1,8 +1,11 @@
-package com.example.maintenanceapp.data
+package com.example.maintenanceapp.data.UsersTableTest
 
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.example.maintenanceapp.data.AppDatabase
+import com.example.maintenanceapp.data.UsersDao
+import com.example.maintenanceapp.data.UsersEntity
 import com.google.common.truth.Truth.assertThat
 import org.junit.After
 import org.junit.Before
@@ -20,7 +23,7 @@ class UsersTableTest {
     private val user2 = UsersEntity(2, "tommy Jim lad", "2020:2:12")
 
     @Before
-    fun createDb() {
+    fun createDatabase() {
         // set up device
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         // build database in memory
@@ -36,19 +39,19 @@ class UsersTableTest {
 
     @After
     @Throws(IOException::class)
-    fun closeDb() {
+    fun closeDatabase() {
         database.close()
     }
 
     @Test
     @Throws(java.lang.Exception::class)
-    fun getalldata() {
+    fun getAllUsers() {
         assertThat(usersDao.getAllUsers()).isEqualTo(listOf(user1, user2))
     }
 
     @Test
     @Throws(Exception::class)
-    fun readID() {
+    fun getEngineerNameFromID() {
         assertThat(usersDao.getEngineerNameFromID(1)).isEqualTo("John")
     }
 }
