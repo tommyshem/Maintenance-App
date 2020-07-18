@@ -6,7 +6,7 @@ import androidx.room.*
 // Describe the sqlite users table
 @Entity(tableName = "users_table")
 data class UsersEntity (
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo( name = "engineer_name") @NonNull val engineerName : String,
     @ColumnInfo( name = "last_modified_date") @NonNull val lastModifiedDate : String
 )
@@ -15,7 +15,7 @@ data class UsersEntity (
 @Dao
 interface UsersDao{
     @Query("Select * from users_table ORDER BY engineer_name ASC")
-    fun getUsers():List<UsersEntity>
+    fun getAllUsers():List<UsersEntity>
 
     // TODO the table id is auto number so the insertUsers needs to be changed from 2 args to one arg
     @Insert (onConflict = OnConflictStrategy.REPLACE)

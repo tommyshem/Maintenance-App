@@ -1,24 +1,23 @@
-package com.example.maintenanceapp.data.UsersTableTest
+package com.example.maintenanceapp.data
 
 import androidx.room.Room
-import org.junit.Assert.assertThat
-import org.hamcrest.Matchers.equalTo
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import com.google.common.truth.Truth.*
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import java.io.IOException
-import com.example.maintenanceapp.data.*
 
 @RunWith(AndroidJUnit4::class)
-class UsersTableTest {
-    private lateinit var usersDao: UsersDao
+class PartsTableTest {
+    private lateinit var partsDao: PartsDao
     private lateinit var database : AppDatabase
     // TODO the table id is auto number so the insertUsers needs to be changed from 2 args to one arg
-    private val user1 = UsersEntity(1,"John","2020:07:16")
-    private val user2 = UsersEntity(2,"tommy Jim lad","2020:2:12")
+    private val part1 = PartsEntity(1,"13-45","nut", 4F,"washer",1,"23")
+    private val part2 = PartsEntity(2,"54-45","bearing", 10F,"cutting table",2,"45")
+
     @Before
     fun createDb() {
         // set up device
@@ -27,10 +26,10 @@ class UsersTableTest {
         database = Room.inMemoryDatabaseBuilder(
             context, AppDatabase::class.java).build()
         // get user table
-        usersDao = database.getUsersDao()
+        partsDao = database.getPartsDao()
         // insert test data
-        usersDao.insertUsers(user1)
-        usersDao.insertUsers(user2)
+        partsDao.insertPart(part1)
+        partsDao.insertPart(part2)
     }
 
     @After
@@ -42,11 +41,11 @@ class UsersTableTest {
     @Test
     @Throws(java.lang.Exception::class)
     fun getalldata(){
-        assertThat(usersDao.getAllUsers(), equalTo(listOf(user1,user2)))
+        assertThat(partsDao.getAllParts()).contains("54-45") //, Matchers.equalTo(listOf(part1, part2)))
     }
 
     @Test
     @Throws(Exception::class)
     fun readID() {
-        assertThat(usersDao.getEngineerNameFromID(1), equalTo("John"))
+        assertThat(partsDao.getPartNameFromManufactureID("54-45")).isEqualTo("bearing") //, Matchers.equalTo("bearing"))
     }}

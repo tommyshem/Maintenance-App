@@ -7,8 +7,8 @@ import androidx.room.PrimaryKey
 
 // Describe the sqlite users table
 @Entity(tableName = "work_order_table")
-data class WorkOrder_Table (
-    @PrimaryKey(autoGenerate = true) val id: Int,
+data class WorkOrderEntity (
+    @PrimaryKey(autoGenerate = true) val id: Long,
     @ColumnInfo( name = "work_order_number") @NonNull val workOrderNumber : Int,
     @ColumnInfo( name = "date") @NonNull val Date: String,
     @ColumnInfo( name = "summary_issue") @NonNull val summaryIssue: String,
@@ -21,7 +21,8 @@ data class WorkOrder_Table (
     @ColumnInfo( name = "images_url") val imagesURL : String,
     @ColumnInfo( name = "last_modified_date") @NonNull val lastModifiedDate : String,
     @ColumnInfo( name = "parts_used") val partsUsed : String?,
-    @ColumnInfo( name = "parts_required") val partsRequired : String?
+    @ColumnInfo( name = "parts_required") val partsRequired : String?,
+    @ColumnInfo( name = "machine_id") val machineID : Int
     )
 
 // Functions to interact with sqlite users table
