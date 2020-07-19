@@ -13,6 +13,7 @@ import com.example.maintenanceapp.databinding.FragmentUsersBinding
 class UsersFragment : Fragment() {
 
     private lateinit var usersItemsViewModel: UsersViewModel
+    private val logTag = "UsersFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,6 +46,9 @@ class UsersFragment : Fragment() {
 
     override fun onStart() {
         super.onStart()
-        Log.d("UserFragment","onStart called")
+        Log.d(logTag,"onStart called")
+    }
+    fun onClick(){
+        Log.d(logTag,"onClick called")
     }
 }
