@@ -18,4 +18,5 @@
     <string name="menu_4">Users</string>
     <string name="menu_5">Settings</string>
     <string name="enter_engineers_name">Enter Engineers Name</string>
+    <string name="menu6">Add User</string>
 </resources>

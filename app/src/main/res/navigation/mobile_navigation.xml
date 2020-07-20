@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Navigation -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_work_orders">
-
+    <!-- Work Orders Fragment -->
     <fragment
         android:id="@+id/nav_work_orders"
         android:name="com.example.maintenanceapp.ui.workorders.WorkOrderFragment"
         android:label="@string/menu_1"
         tools:layout="@layout/fragment_work_orders" />
-
-    <fragment
-        android:id="@+id/nav_pm_check_lists"
-        android:name="com.example.maintenanceapp.ui.PMCheckLists.PMCheckListsFragment"
-        android:label="@string/menu_2"
-        tools:layout="@layout/fragment_pm_check_lists" />
-
-    <fragment
-        android:id="@+id/nav_inventory_items"
-        android:name="com.example.maintenanceapp.ui.inventoryItems.InventoryItemsFragment"
-        android:label="@string/menu_3"
-        tools:layout="@layout/fragment_inventory_items" />
-    <fragment
-        android:id="@+id/nav_users"
-        android:name="com.example.maintenanceapp.ui.users.UsersFragment"
-        android:label="@string/menu_4"
-        tools:layout="@layout/fragment_users" />
-    <fragment
-        android:id="@+id/nav_settings"
-        android:name="com.example.maintenanceapp.ui.inventoryItems.SettingsFragment"
-        android:label="@string/menu_5"
-        tools:layout="@layout/fragment_settings" />
-    <fragment
-        android:id="@+id/nav_user_add"
-        android:name="com.example.maintenanceapp.ui.u"
-        android:label="@string/menu_5"
-        tools:layout="@layout/fragment_users_add" />
-</navigation>
+    <!-- Check List Fragments -->
+        <fragment
+            android:id="@+id/nav_pm_check_lists"
+            android:name="com.example.maintenanceapp.ui.PMCheckLists.PMCheckListsFragment"
+            android:label="@string/menu_2"
+            tools:layout="@layout/fragment_pm_check_lists" />
+    <!-- Inventory Items Fragment -->
+        <fragment
+            android:id="@+id/nav_inventory_items"
+            android:name="com.example.maintenanceapp.ui.inventoryItems.InventoryItemsFragment"
+            android:label="@string/menu_3"
+            tools:layout="@layout/fragment_inventory_items" />
+    <!-- Users Fragment-->
+        <fragment
+            android:id="@+id/nav_users"
+            android:name="com.example.maintenanceapp.ui.users.UsersFragment"
+            android:label="@string/menu_4"
+            tools:layout="@layout/fragment_users" />
+    <!-- Settings Fragment-->
+        <fragment
+            android:id="@+id/nav_settings"
+            android:name="com.example.maintenanceapp.ui.settings.SettingsFragment"
+            android:label="@string/menu_5"
+            tools:layout="@layout/fragment_settings" />
+    <!-- User add Fragment-->
+        <fragment
+            android:id="@+id/nav_user_add"
+            android:name="com.example.maintenanceapp.ui.users.UsersAddFragment"
+            android:label="@string/menu6"
+            tools:layout="@layout/fragment_users_add" />
+    </navigation>
