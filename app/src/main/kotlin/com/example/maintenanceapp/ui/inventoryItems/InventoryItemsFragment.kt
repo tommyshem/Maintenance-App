@@ -6,13 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.graphics.component1
-import androidx.core.graphics.component2
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.example.maintenanceapp.R
 import com.example.maintenanceapp.databinding.FragmentInventoryItemsBinding
-import com.google.android.material.datepicker.MaterialDatePicker
+import com.example.maintenanceapp.dialog.DatePickerFragment
+
 
 class InventoryItemsFragment : Fragment() {
 
@@ -24,6 +23,7 @@ class InventoryItemsFragment : Fragment() {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
+        Log.d(logTag,"onCreateView called")
 
         val root = inflater.inflate(R.layout.fragment_inventory_items, container, false)
         // A binding class is generated for each layout file.
@@ -37,36 +37,41 @@ class InventoryItemsFragment : Fragment() {
         val currentMonth: Int = now.get(Calendar.MONTH)
         val currentDay: Int = now.get(Calendar.DAY_OF_MONTH)
 
-        //val builder : MaterialDatePicker.Builder<*> = MaterialDatePicker.Builder.datePicker() // 1
-        //val picker : MaterialDatePicker<*> = builder.build()  // 2
-        //picker.show(supportFragmentManager, picker.toString())   // 3
+        val newFragment: DialogFragment = DatePickerFragment()
+        newFragment.show(requireActivity().supportFragmentManager, "datePicker")
 
-
-        val builder  = MaterialDatePicker.Builder.datePicker()
-       // val currentTimeInMillis = Calendar.getInstance().timeInMillis
-        builder.setTitleText("Select Date")
-       // builder.setSelection(currentTimeInMillis)
-       // builder.setSelection(androidx.core.util.Pair(now.timeInMillis, now.timeInMillis)
-        val picker  = builder.build()
-
-        picker.addOnCancelListener {
-            Log.d(logTag,"addOnCancel called and dialog canceled")
-        }
-        picker.addOnNegativeButtonClickListener {
-            Log.d(logTag,"addNegativeButton called and dialog negative button clicked")
-        }
-        picker.addOnDismissListener {
-            Log.d(logTag,"addOnDismiss called and dialog dismissed")
-        }
-
-        picker.addOnPositiveButtonClickListener {
-            val (startOfRange, endOfRange) = it   // in case date range operation
-            val date = it //  single select date
-            Log.d(logTag,"addOnPositive called and ok button pressed")
-        }
-    // show the date picker
-       // picker.show(getSupportFragmentManager(), picker.toString())
-        //picker.show(targetFragment,picker.toString())
+//
+//        //val builder : MaterialDatePicker.Builder<*> = MaterialDatePicker.Builder.datePicker() // 1
+//        //val picker : MaterialDatePicker<*> = builder.build()  // 2
+//        //picker.show(supportFragmentManager, picker.toString())   // 3
+//        Log.d(logTag,"builder started")
+//
+//        val builder  = MaterialDatePicker.Builder.datePicker()
+//       // val currentTimeInMillis = Calendar.getInstance().timeInMillis
+//        builder.setTitleText("Select Date")
+//       // builder.setSelection(currentTimeInMillis)
+//       // builder.setSelection(androidx.core.util.Pair(now.timeInMillis, now.timeInMillis)
+//        val picker  = builder.build()
+//
+//        picker.addOnCancelListener {
+//            Log.d(logTag,"addOnCancel called and dialog canceled")
+//        }
+//        picker.addOnNegativeButtonClickListener {
+//            Log.d(logTag,"addNegativeButton called and dialog negative button clicked")
+//        }
+//        picker.addOnDismissListener {
+//            Log.d(logTag,"addOnDismiss called and dialog dismissed")
+//        }
+//
+//        picker.addOnPositiveButtonClickListener {
+//            val (startOfRange, endOfRange) = it   // in case date range operation
+//            val date = it //  single select date
+//            Log.d(logTag,"addOnPositive called and ok button pressed")
+//        }
+//        Log.d(logTag,"picker click listner completed")
+//    // show the date picker
+//      // picker.show(getSupportFragmentManager, picker.toString())
+//        picker.show(requireActivity().supportFragmentManager,"date picker")
 
 
 
