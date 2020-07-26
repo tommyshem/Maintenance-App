@@ -11,7 +11,6 @@ import androidx.navigation.findNavController
 import com.example.maintenanceapp.R
 import com.example.maintenanceapp.databinding.FragmentWorkOrdersBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 
 class WorkOrderFragment : Fragment() {
 
@@ -37,8 +36,6 @@ class WorkOrderFragment : Fragment() {
         fab.setOnClickListener { view ->
             Log.d(logTag,"Floating button pressed")
             view.findNavController().navigate(R.id.action_nav_work_orders_to_workOrderFragmentAdd)
-//            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show()
         }
 
         return binding.root

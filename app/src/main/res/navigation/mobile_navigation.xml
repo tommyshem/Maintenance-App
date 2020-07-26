@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_work_orders">
+    app:startDestination="@id/nav_mainFragment">
     <!-- Work Orders Fragment -->
     <fragment
         android:id="@+id/nav_work_orders"
@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_work_orders" >
         <action
             android:id="@+id/action_nav_work_orders_to_workOrderFragmentAdd"
-            app:destination="@id/workOrderFragmentAdd" />
+            app:destination="@id/nav_workOrderFragmentAdd" />
     </fragment>
     <!-- Check List Fragments -->
     <fragment
@@ -25,7 +25,11 @@
         android:id="@+id/nav_inventory_items"
         android:name="com.example.maintenanceapp.ui.inventoryItems.InventoryItemsFragment"
         android:label="@string/menu_3"
-        tools:layout="@layout/fragment_inventory_items" />
+        tools:layout="@layout/fragment_inventory_items" >
+        <action
+            android:id="@+id/action_nav_inventory_items_to_inventoryItemsAddFragment"
+            app:destination="@id/nav_inventoryItemsAddFragment" />
+    </fragment>
     <!-- Users Fragment-->
     <fragment
         android:id="@+id/nav_users"
@@ -49,7 +53,41 @@
         android:label="@string/menu6"
         tools:layout="@layout/fragment_users_add" />
     <fragment
-        android:id="@+id/workOrderFragmentAdd"
+        android:id="@+id/nav_workOrderFragmentAdd"
         android:name="com.example.maintenanceapp.ui.workorders.WorkOrderFragmentAdd"
-        android:label="WorkOrderFragmentAdd" />
+        android:label="WorkOrderFragmentAdd"
+        tools:layout="@layout/fragment_work_orders_add">
+        <action
+            android:id="@+id/action_workOrderFragmentAdd_to_nav_work_orders"
+            app:destination="@id/nav_work_orders" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_inventoryItemsAddFragment"
+        android:name="com.example.maintenanceapp.ui.inventoryItems.InventoryItemsAddFragment"
+        android:label="InventoryItemsAddFragment" >
+        <action
+            android:id="@+id/action_inventoryItemsAddFragment_to_nav_inventory_items"
+            app:destination="@id/nav_inventory_items" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_mainFragment"
+        android:name="com.example.maintenanceapp.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main_menu">>
+        <action
+            android:id="@+id/action_mainFragment_to_nav_pm_check_lists"
+            app:destination="@id/nav_pm_check_lists" />
+        <action
+            android:id="@+id/action_mainFragment_to_nav_work_orders"
+            app:destination="@id/nav_work_orders" />
+        <action
+            android:id="@+id/action_mainFragment_to_nav_settings"
+            app:destination="@id/nav_settings" />
+        <action
+            android:id="@+id/action_mainFragment_to_nav_users"
+            app:destination="@id/nav_users" />
+        <action
+            android:id="@+id/action_mainFragment_to_nav_inventory_items"
+            app:destination="@id/nav_inventory_items" />
+    </fragment>/>
 </navigation>
