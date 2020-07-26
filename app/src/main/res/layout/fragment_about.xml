@@ -2,9 +2,9 @@
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayoutAbout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#90CAF9"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -22,10 +22,20 @@
         android:src="@drawable/ic_app_icon" />
 
     <TextView
-        android:id="@+id/textViewAppInfo"
+        android:id="@+id/textViewAppName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/appinfo"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="#7E57C2"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textViewVersionNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_version"
         android:textAlignment="center"
         android:textColor="#7E57C2"
         android:textSize="30sp"

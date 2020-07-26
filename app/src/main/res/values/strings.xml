@@ -40,7 +40,6 @@
     <string name="Type">Type</string>
     <!-- about fragment strings -->
     <string name="app_logo">App Logo</string>
-    <string name="appinfo">Maintenance App V0.1</string>
     <string name="programmed_by">Programmed By T.Shemwell</string>
     <string name="about">About</string>
 </resources>
