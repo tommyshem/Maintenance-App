@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.maintenanceapp.R
 import com.example.maintenanceapp.databinding.FragmentUsersBinding
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class UsersFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
@@ -28,6 +29,7 @@ class UsersFragment : Fragment(), AdapterView.OnItemSelectedListener {
         // converting it to Pascal case and adding the Binding suffix to it e.g fragment_users becomes FragmentUsersBinding
         //val bind: FragmentUsersBinding = FragmentUsersBinding.bind(fragmentView)
         val binding = DataBindingUtil.inflate<FragmentUsersBinding>(inflater,R.layout.fragment_users,container,false)
+
         // create on click listener for drop down widget
         binding.dropDownEngineersName.onItemSelectedListener = this
 

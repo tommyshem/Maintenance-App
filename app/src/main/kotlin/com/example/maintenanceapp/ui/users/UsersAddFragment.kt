@@ -14,7 +14,7 @@ import com.example.maintenanceapp.databinding.FragmentUsersBinding
 class UsersAddFragment : Fragment(){
 
 
-    private lateinit var usersItemsViewModel: UsersViewModel
+    private lateinit var usersAddViewModel: UsersViewAddModel
     private val logTag = "UsersAddFragment"
 
     override fun onCreateView(

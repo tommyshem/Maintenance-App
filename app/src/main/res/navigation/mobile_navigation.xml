@@ -9,7 +9,11 @@
         android:id="@+id/nav_work_orders"
         android:name="com.example.maintenanceapp.ui.workorders.WorkOrderFragment"
         android:label="@string/menu_1"
-        tools:layout="@layout/fragment_work_orders" />
+        tools:layout="@layout/fragment_work_orders" >
+        <action
+            android:id="@+id/action_nav_work_orders_to_workOrderFragmentAdd"
+            app:destination="@id/workOrderFragmentAdd" />
+    </fragment>
     <!-- Check List Fragments -->
     <fragment
         android:id="@+id/nav_pm_check_lists"
@@ -27,7 +31,11 @@
         android:id="@+id/nav_users"
         android:name="com.example.maintenanceapp.ui.users.UsersFragment"
         android:label="@string/menu_4"
-        tools:layout="@layout/fragment_users" />
+        tools:layout="@layout/fragment_users" >
+        <action
+            android:id="@+id/action_nav_users_to_nav_user_add"
+            app:destination="@id/nav_user_add" />
+    </fragment>
     <!-- Settings Fragment-->
     <fragment
         android:id="@+id/nav_settings"
@@ -40,4 +48,8 @@
         android:name="com.example.maintenanceapp.ui.users.UsersAddFragment"
         android:label="@string/menu6"
         tools:layout="@layout/fragment_users_add" />
+    <fragment
+        android:id="@+id/workOrderFragmentAdd"
+        android:name="com.example.maintenanceapp.ui.workorders.WorkOrderFragmentAdd"
+        android:label="WorkOrderFragmentAdd" />
 </navigation>
