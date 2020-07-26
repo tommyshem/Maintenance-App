@@ -148,8 +148,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:autofillHints="@string/enter_manufactor_name_of_the_part"
-                android:hint="@string/enter_manufactor_name_of_the_part"
+                android:autofillHints="@string/enter_manf_name_of_the_part"
+                android:hint="@string/enter_manf_name_of_the_part"
                 android:text="" />
 
             <TextView
@@ -165,8 +165,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="text"
-                android:autofillHints="@string/enter_manufactorpart_nuumber"
-                android:hint="@string/enter_manufactorpart_nuumber"
+                android:autofillHints="@string/enter_manf_part_nuumber"
+                android:hint="@string/enter_manf_part_nuumber"
                 android:text=""
                 tools:ignore="TextFields" />
 
