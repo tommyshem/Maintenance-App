@@ -1,8 +1,10 @@
 package com.example.maintenanceapp.dialog
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.DatePicker
@@ -33,5 +35,12 @@ class DatePickerFragment : DialogFragment(),
             "$day/$month/$year/"
 
         Log.d("4stepsFragment", sessionDate)
+
+        targetFragment?.onActivityResult(
+            targetRequestCode,
+            Activity.RESULT_OK,
+            Intent().putExtra("selectedDate", sessionDate)
+        )
+
     }
 }

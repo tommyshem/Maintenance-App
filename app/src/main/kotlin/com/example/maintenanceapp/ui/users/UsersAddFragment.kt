@@ -5,9 +5,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.example.maintenanceapp.R
 import com.example.maintenanceapp.databinding.FragmentUsersAddBinding
+import com.example.maintenanceapp.databinding.FragmentUsersBinding
 
 class UsersAddFragment : Fragment(){
 
@@ -21,14 +23,13 @@ class UsersAddFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         Log.d(logTag,"onCreateView called")
-        val fragmentView = inflater.inflate(R.layout.fragment_users_add, container, false)
         // A binding class is generated for each layout file.
         // By default, the name of the class is based on the name of the layout file,
         // converting it to Pascal case and adding the Binding suffix to it e.g fragment_users_add becomes FragmentUsersAddBinding
-        val bind: FragmentUsersAddBinding = FragmentUsersAddBinding.bind(fragmentView)
+        val binding = DataBindingUtil.inflate<FragmentUsersBinding>(inflater,R.layout.fragment_users,container,false)
         // create on click listener for drop down widget
 
-        return fragmentView
+        return binding.root
     }
 
 }
