@@ -23,7 +23,7 @@ class PMCheckListsFragment : Fragment() {
         // A binding class is generated for each layout file.
         // By default, the name of the class is based on the name of the layout file,
         // converting it to Pascal case and adding the Binding suffix to it e.g fragment_pm_check_lists becomes FragmentPmCheckListsBinding
-        val binding = DataBindingUtil.inflate<FragmentUsersBinding>(inflater,R.layout.fragment_users,container,false)
+        val binding = DataBindingUtil.inflate<FragmentPmCheckListsBinding>(inflater,R.layout.fragment_pm_check_lists,container,false)
         return binding.root
     }
 }

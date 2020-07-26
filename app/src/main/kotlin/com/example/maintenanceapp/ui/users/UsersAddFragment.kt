@@ -26,7 +26,7 @@ class UsersAddFragment : Fragment(){
         // A binding class is generated for each layout file.
         // By default, the name of the class is based on the name of the layout file,
         // converting it to Pascal case and adding the Binding suffix to it e.g fragment_users_add becomes FragmentUsersAddBinding
-        val binding = DataBindingUtil.inflate<FragmentUsersBinding>(inflater,R.layout.fragment_users,container,false)
+        val binding = DataBindingUtil.inflate<FragmentUsersAddBinding>(inflater,R.layout.fragment_users_add,container,false)
         // create on click listener for drop down widget
 
         return binding.root

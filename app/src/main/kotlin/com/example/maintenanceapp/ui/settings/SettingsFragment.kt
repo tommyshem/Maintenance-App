@@ -23,7 +23,7 @@ class SettingsFragment : Fragment() {
         // A binding class is generated for each layout file.
         // By default, the name of the class is based on the name of the layout file,
         // converting it to Pascal case and adding the Binding suffix to it e.g fragment_settings becomes FragmentSettingsBinding
-        val binding = DataBindingUtil.inflate<FragmentUsersBinding>(inflater,R.layout.fragment_users,container,false)
+        val binding = DataBindingUtil.inflate<FragmentSettingsBinding>(inflater,R.layout.fragment_settings,container,false)
         return binding.root
     }
 }
