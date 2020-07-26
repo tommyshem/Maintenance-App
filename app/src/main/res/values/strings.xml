@@ -20,4 +20,18 @@
     <string name="enter_engineers_name">Enter Engineers Name</string>
     <string name="menu6">Add User</string>
     <string name="action_updatePart">update</string>
+    <string name="part_number">Part Number</string>
+    <string name="description">Description of the part</string>
+    <string name="stocklocation">Stock Location</string>
+    <string name="Class">Class</string>
+    <string name="qtyhand">Qty on Hand</string>
+    <string name="ManfName">Manifactor Name</string>
+    <string name="manfPartNumber">Manufactor Part Number</string>
+    <string name="enter_manufactor_name_of_the_part">Enter Manufactor Name of the part</string>
+    <string name="enter_manufactorpart_nuumber">Enter ManufactorPart Nuumber</string>
+    <string name="enter_qty_on_hand">Enter Qty on hand</string>
+    <string name="enter_class_of_the_part">Enter Class of the part</string>
+    <string name="enter_stock_location">Enter Stock Location</string>
+    <string name="enter_description_of_the_part">Enter Description of the part</string>
+    <string name="enter_part_number">Enter Part Number</string>
 </resources>

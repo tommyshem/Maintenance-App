@@ -23,21 +23,27 @@ class InventoryItemsFragment : Fragment() {
     private val logTag = "InventoryItemsFragment"
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        Log.d(logTag,"onCreateView called")
+        Log.d(logTag, "onCreateView called")
         // A binding class is generated for each layout file.
         // By default, the name of the class is based on the name of the layout file,
         // converting it to Pascal case and adding the Binding suffix to it e.g fragment_inventry_items becomes FragmentInventoryItemsBinding
-        val binding = DataBindingUtil.inflate<FragmentInventoryItemsBinding>(inflater,R.layout.fragment_inventory_items,container,false)
+        val binding = DataBindingUtil.inflate<FragmentInventoryItemsBinding>(
+            inflater,
+            R.layout.fragment_inventory_items,
+            container,
+            false
+        )
 
         // add button
         val fab: FloatingActionButton = binding.addPart
         fab.setOnClickListener { view ->
-            Log.d(logTag,"Floating button pressed")
-          //  view.findNavController().navigate(R.id.action_nav_work_orders_to_workOrderFragmentAdd)
+            Log.d(logTag, "Floating button pressed")
+            view.findNavController()
+                .navigate(R.id.action_nav_inventory_items_to_inventoryItemsAddFragment)
         }
 
 
@@ -46,8 +52,7 @@ class InventoryItemsFragment : Fragment() {
         return binding.root
     }
 
-    fun showDatePicker()
-    {
+    fun showDatePicker() {
         val now = Calendar.getInstance()
         val currentYear: Int = now.get(Calendar.YEAR)
         val currentMonth: Int = now.get(Calendar.MONTH)
