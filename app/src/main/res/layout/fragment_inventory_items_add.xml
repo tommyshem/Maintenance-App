@@ -38,10 +38,28 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textPartNumber"
+                android:id="@+id/textSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/supplier_name"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editSupplier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints="@string/enter_supplier_name"
+                android:ems="10"
+                android:hint="@string/enter_supplier_name"
+                android:inputType="text"
+                android:text="" />
+
+            <TextView
+                android:id="@+id/textSupplierPartNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/part_number" />
+                android:text="@string/part_number"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextPartNumber"
@@ -58,7 +76,8 @@
                 android:id="@+id/textDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/description" />
+                android:text="@string/description"
+                android:textStyle="bold" />
 
             <MultiAutoCompleteTextView
                 android:id="@+id/multiAutoCompleteTextViewDescription"
@@ -72,7 +91,8 @@
                 android:id="@+id/textStockLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/stocklocation" />
+                android:text="@string/stocklocation"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextStockLocation"
@@ -85,27 +105,25 @@
                 android:text="" />
 
             <TextView
-                android:id="@+id/textClass"
+                android:id="@+id/textType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Class" />
+                android:text="@string/Type"
+                android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/editTextClass"
+            <Spinner
+                android:id="@+id/spinnerPartType"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:autofillHints="@string/enter_class_of_the_part"
-                android:hint="@string/enter_class_of_the_part"
-                android:inputType="text"
-                android:text="" />
+                android:hint="@string/enter_type_of_the_part"
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textQtyHand"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="Enter Qty on Hand"
-                android:text="@string/qtyhand" />
+                android:text="@string/qtyhand"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextQtyHand"
@@ -121,7 +139,8 @@
                 android:id="@+id/textManfName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/ManfName" />
+                android:text="@string/ManfName"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextManfName"
@@ -137,7 +156,8 @@
                 android:id="@+id/textmanfPartNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/manfPartNumber" />
+                android:text="@string/manfPartNumber"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editmanfPartNumber"
@@ -149,6 +169,40 @@
                 android:hint="@string/enter_manufactorpart_nuumber"
                 android:text=""
                 tools:ignore="TextFields" />
+
+            <TextView
+                android:id="@+id/textPartFits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/part_fits_on_machine"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editPartFits"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:autofillHints="@string/enter_the_machine_the_part_fits"
+                android:hint="@string/enter_the_machine_the_part_fits"
+                android:text=""
+                />
+
+            <TextView
+                android:id="@+id/textPartPicture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/picture_of_part"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageViewPartPicture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/picture_of_part"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
