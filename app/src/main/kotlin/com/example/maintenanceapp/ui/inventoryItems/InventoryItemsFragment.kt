@@ -11,8 +11,8 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.maintenanceapp.R
+import com.example.maintenanceapp.adapter.PartsAdapter
 import com.example.maintenanceapp.databinding.FragmentInventoryItemsBinding
-import com.example.maintenanceapp.databinding.FragmentUsersBinding
 import com.example.maintenanceapp.dialog.DatePickerFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -46,9 +46,10 @@ class InventoryItemsFragment : Fragment() {
                 .navigate(R.id.action_nav_inventory_items_to_inventoryItemsAddFragment)
         }
 
-
-
-
+        // recycler view
+        val adapter = PartsAdapter()
+        binding.partsList.adapter = adapter
+        // return parts view
         return binding.root
     }
 
