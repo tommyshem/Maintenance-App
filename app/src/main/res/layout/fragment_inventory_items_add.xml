@@ -73,6 +73,23 @@
                 tools:ignore="TextFields" />
 
             <TextView
+                android:id="@+id/textViewPartName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="@string/part_name" />
+
+            <EditText
+                android:id="@+id/editTextPartName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="text"
+                android:autofillHints="@string/enter_part_name"
+                android:hint="@string/enter_part_name"
+                android:text="" />
+
+            <TextView
                 android:id="@+id/textDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -187,6 +204,23 @@
                 android:hint="@string/enter_the_machine_the_part_fits"
                 android:text=""
                 />
+
+            <TextView
+                android:id="@+id/textViewPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/price"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editTextPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:autofillHints="@string/enter_price_for_the_part"
+                android:hint="@string/enter_price_for_the_part"
+                android:text="" />
 
             <TextView
                 android:id="@+id/textPartPicture"

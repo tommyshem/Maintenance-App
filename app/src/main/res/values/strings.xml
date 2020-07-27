@@ -42,4 +42,8 @@
     <string name="app_logo">App Logo</string>
     <string name="programmed_by">Programmed By T.Shemwell</string>
     <string name="about">About</string>
+    <string name="part_name">Part name</string>
+    <string name="enter_part_name">Enter Part Name</string>
+    <string name="price">Price</string>
+    <string name="enter_price_for_the_part">Enter Price for the part</string>
 </resources>

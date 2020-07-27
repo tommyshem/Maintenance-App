@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(
 // add table entity's you want in the database
-    entities = [UsersEntity::class, PartsEntity::class, PartsImagesEntity::class,ImageURLEntity::class], version = 1
+    entities = [UsersEntity::class, PartsEntity::class,ImageURLEntity::class], version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
     // Add here the table data access object

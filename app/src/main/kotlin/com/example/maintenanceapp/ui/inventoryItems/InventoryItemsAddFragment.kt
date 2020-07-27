@@ -2,17 +2,17 @@ package com.example.maintenanceapp.ui.inventoryItems
 
 import android.icu.util.Calendar
 import android.os.Bundle
+import android.text.InputFilter
 import android.util.Log
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import com.example.maintenanceapp.R
+import com.example.maintenanceapp.data.AppDatabase
 import com.example.maintenanceapp.databinding.FragmentInventoryItemsAddBinding
-import com.example.maintenanceapp.databinding.FragmentInventoryItemsBinding
-import com.example.maintenanceapp.databinding.FragmentUsersBinding
 import com.example.maintenanceapp.dialog.DatePickerFragment
+import com.example.maintenanceapp.utils.LimitDecimalDigits
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
@@ -40,20 +40,26 @@ class InventoryItemsAddFragment : Fragment() {
         // update button click
         val fab: FloatingActionButton = binding.updatePart
         fab.setOnClickListener { view ->
-            Log.d(logTag, "Floating button pressed")
-            //  view.findNavController().navigate(R.id.action_nav_work_orders_to_workOrderFragmentAdd)
+            Log.d(logTag, "Floating update button pressed")
         }
         // display the options menu
         setHasOptionsMenu(true)
 
-
+        // TODO: datasource data binding
+        val application = requireNotNull(this.activity).application
+        // val arguments = SleepQualityFragmentArgs.fromBundle(arguments)
+        // Create an instance of the ViewModel Factory.
+        val dataSource = AppDatabase.getAppDataBase(application)?.getPartsDao()
+    // limit price to 2 decimal places
+        binding.editTextPrice.setFilters(arrayOf<InputFilter>(LimitDecimalDigits(6, 2)))
+        // return the fragment view
         return binding.root
     }
 
     // create options menu
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.options_menu_parts,menu)
+        inflater?.inflate(R.menu.options_menu_parts, menu)
     }
 
     // display the calendar fragment picker
